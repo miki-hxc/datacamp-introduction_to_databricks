@@ -1,0 +1,13 @@
+services:
+  datacamp-introduction_to_databricks:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: datacamp-introduction_to_databricks
+    environment:
+      - GRANT_SUDO=yes
+    ports:
+      - "8888:8888"
+    volumes:
+      - "./introduction_to_databricks:/home/jovyan/introduction_to_databricks"
+    restart: unless-stopped
